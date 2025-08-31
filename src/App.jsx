@@ -43,9 +43,15 @@ function App() {
 
   function handleCreate(newTodo) {
     setTodos((prevTodos) => [
-      ...prevTodos, 
-      { id: `${prevTodos.length + 1}`, ...newTodo }
+      ...prevTodos,
+      { id: `${prevTodos.length + 1}`, ...newTodo },
     ]);
+  }
+
+  function handleUpdate(id, newTodo) {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) => (todo.id === id ? newTodo : todo))
+    );
   }
 
   return (
@@ -57,10 +63,10 @@ function App() {
 
       <div className={styles.AppContainer}>
         <TodoForm onCreate={handleCreate} />
-        <TodoList todos={todos} />
+        <TodoList todos={todos} onUpdate={handleUpdate} />
       </div>
     </div>
   );
 }
 
-export default App
+export default App;
