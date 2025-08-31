@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./TodoForm.module.css";
 
 export function TodoForm({ onCreate }) {
-  const [showAllFields, setShowAllFields] = useState(false);
+  const [showAllFields, setShowAllFields] = useState(true);
 
   function handleSubmit(event) {
     event.preventDefault();
