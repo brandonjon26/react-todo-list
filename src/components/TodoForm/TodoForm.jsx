@@ -5,7 +5,7 @@ import { TodoFormFields } from "../TodoFormFields/TodoFormFields";
 import styles from "./TodoForm.module.css";
 
 export function TodoForm({ onCreate }) {
-  const [showAllFields, setShowAllFields] = useState(false);
+  const [showAllFields, setShowAllFields] = useState(true);
   const {
     register,
     handleSubmit,
